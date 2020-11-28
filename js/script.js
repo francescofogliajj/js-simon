@@ -4,7 +4,7 @@ var numeriComputer = [];
 while (numeriComputer.length < 5) {
   var numeroCasuale = numeroRandom(1, 100);
 
-  if (numeroDuplicato(numeriComputer, numeroCasuale) == false) {
+  if (numeriComputer.includes(numeroCasuale) == false) {
     numeriComputer.push(numeroCasuale);
   }
 
@@ -38,19 +38,4 @@ function timer() {
 // Funzioni---------------------------------------------------------------------
 function numeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function numeroDuplicato(array, elemento) {
-  var trovato = false;
-
-  for (i = 0; i < array.length; i++) {
-
-    if (elemento == array[i]) {
-      trovato = true;
-      return trovato;
-    }
-
-  }
-
-  return trovato;
 }
